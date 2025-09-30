@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             console.log('Form submitted:', formData);
-            alert('Thank you for your message! I will get back to you soon.');
+            alert('Thank you for your message! I will get back to you soon.');// for others to contact
             this.reset();
         });
     }
