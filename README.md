@@ -13,4 +13,4 @@ GitHub will display the **live URL**.
 - CSS
 - JavaScript
 
-Feel free to explore and customize it for your personal use!
+Feel free to explore and customize it for your personal use.
