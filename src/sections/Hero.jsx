@@ -79,7 +79,7 @@ export default function Hero({ reducedMotion }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.72, delay: 0.62 }}
-            className="mt-14 flex items-center gap-3 font-mono text-sm text-faint"
+            className="mt-14 flex items-center gap-3 font-mono text-sm text-white"
           >
             <span className="h-px w-12 bg-border" />
             scroll to explore

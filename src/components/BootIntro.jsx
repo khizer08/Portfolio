@@ -102,8 +102,6 @@ export default function BootIntro({ reducedMotion }) {
 
   if (stage === "done") return null;
 
-  const showSkip = stage !== "exiting";
-
   return (
     <AnimatePresence>
       <motion.div
@@ -115,14 +113,7 @@ export default function BootIntro({ reducedMotion }) {
       >
         <div className="hero-stars absolute inset-0" />
 
-        {showSkip && (
-          <button
-            onClick={finish}
-            className="absolute bottom-6 right-6 z-20 font-mono text-[11px] tracking-[0.2em] text-faint hover:text-secondary transition-colors"
-          >
-            SKIP INTRO &rarr;
-          </button>
-        )}
+        {/* Skip intro removed - intro now plays without the skip control */}
 
         {(stage === "idle" || stage === "pressed") && (
           <button
@@ -162,7 +153,7 @@ export default function BootIntro({ reducedMotion }) {
                 strokeLinecap="round"
               />
             </svg>
-            <span className="font-mono text-xs tracking-[0.3em] text-faint group-hover:text-secondary transition-colors">
+            <span className="font-mono text-xs tracking-[0.3em] text-white">
               PRESS TO BOOT
             </span>
           </button>
