@@ -3,7 +3,6 @@ import Footer from "./components/Footer";
 import ScrollProgress from "./components/ScrollProgress";
 import Hero from "./sections/Hero";
 import About from "./sections/About";
-import Orbit from "./sections/Orbit";
 import Skills from "./sections/Skills";
 import Projects from "./sections/Projects";
 import Achievements from "./sections/Achievements";
@@ -26,7 +25,6 @@ export default function App() {
       <main>
         <Hero reducedMotion={reducedMotion} />
         <About />
-        <Orbit />
         <Skills />
         <Projects />
         <Achievements />

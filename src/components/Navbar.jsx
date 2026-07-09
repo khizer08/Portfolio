@@ -97,8 +97,18 @@ export default function Navbar() {
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="fixed inset-x-4 top-[5.5rem] z-50 glass rounded-[2rem] p-4 flex flex-col gap-2 font-mono text-base shadow-[0_40px_120px_rgba(0,0,0,0.3)] md:hidden"
+              className="fixed inset-x-4 top-[5.5rem] z-50 glass rounded-[2rem] p-4 flex flex-col gap-3 font-mono text-base shadow-[0_40px_120px_rgba(0,0,0,0.3)] md:hidden"
             >
+              <div className="flex items-center justify-between gap-4">
+                <span className="text-sm font-semibold uppercase tracking-[0.24em] text-muted">Menu</span>
+                <button
+                  onClick={() => setOpen(false)}
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/5 text-text transition hover:bg-white/10"
+                  aria-label="Close menu"
+                >
+                  <X size={20} />
+                </button>
+              </div>
               {navLinks.map((link) => (
                 <button
                   key={link.id}

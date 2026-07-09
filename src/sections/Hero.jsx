@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowDown, Download, Mail } from "lucide-react";
 import { profile } from "../data/portfolio";
 import Button from "../components/Button";
-import HeroStackScene from "../three/HeroStackScene";
+import OrbitScene from "../components/OrbitScene";
 
 export default function Hero({ reducedMotion }) {
   return (
@@ -11,7 +11,7 @@ export default function Hero({ reducedMotion }) {
       <div className="absolute inset-x-0 top-0 h-1/2 bg-[radial-gradient(circle_at_top,_rgba(110,86,248,0.28),transparent_55%)] pointer-events-none" />
       <div className="absolute -bottom-32 left-1/2 w-[36rem] h-[36rem] bg-secondary/10 rounded-full blur-[120px] -translate-x-1/2" />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 w-full grid lg:grid-cols-[1.05fr_0.95fr] gap-12 items-center">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 w-full grid lg:grid-cols-[1.05fr_0.95fr] gap-12 items-start">
         <div className="hero-content rounded-[2rem] border border-white/10 p-8 sm:p-10">
           <motion.p
             initial={{ opacity: 0, y: 12 }}
@@ -93,7 +93,7 @@ export default function Hero({ reducedMotion }) {
           transition={{ duration: 0.85, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="relative h-[32rem] sm:h-[38rem] lg:h-[45rem] rounded-[2rem] overflow-hidden border border-white/10 bg-surface shadow-[0_40px_120px_rgba(0,0,0,0.45)]"
         >
-          <HeroStackScene reducedMotion={reducedMotion} className="w-full h-full" />
+          <OrbitScene />
         </motion.div>
       </div>
     </section>

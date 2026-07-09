@@ -51,10 +51,10 @@ export default function Contact() {
                 href={href}
                 target={href.startsWith("http") ? "_blank" : undefined}
                 rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="group flex items-center gap-3 font-mono text-sm sm:text-base px-5 py-3 rounded-full border border-white/10 bg-surface/90 text-text shadow-[0_22px_50px_rgba(0,0,0,0.24)] backdrop-blur-sm hover:bg-surface hover:text-white transition-all duration-200"
+                className="group flex items-center gap-3 font-mono text-sm sm:text-base px-5 py-3 rounded-full border border-white/15 bg-white/5 text-white shadow-[0_22px_50px_rgba(110,86,248,0.18)] backdrop-blur-sm hover:bg-white/10 hover:border-primary/40 transition-all duration-200"
               >
-                <Icon size={15} />
-                {label}
+                <Icon size={15} className="text-primary" />
+                <span className="text-white font-semibold">{label}</span>
                 <ArrowUpRight size={13} className="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
               </a>
             ))}

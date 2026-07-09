@@ -4,7 +4,7 @@ import Reveal from "../components/Reveal";
 
 export default function Orbit() {
   return (
-    <section id="orbit" className="relative py-24 md:py-32 overflow-hidden">
+    <section id="orbit" className="relative py-28 md:py-36 overflow-hidden">
       <div className="absolute inset-x-0 top-0 h-1/2 bg-[radial-gradient(circle_at_top,_rgba(110,86,248,0.18),transparent_65%)] pointer-events-none" />
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-12 left-8 w-24 h-24 rounded-full bg-primary/10 blur-3xl" />
@@ -44,7 +44,7 @@ export default function Orbit() {
           </div>
 
           <Reveal>
-            <div className="relative mx-auto w-full max-w-[28rem] md:max-w-xl aspect-square overflow-hidden">
+            <div className="relative mx-auto w-full max-w-[24rem] md:max-w-[28rem] aspect-square overflow-hidden">
               <div className="orbit-scene">
                 <div className="orbit-center glass">
                   <p className="text-faint text-sm uppercase tracking-[0.4em] mb-2">launch</p>
