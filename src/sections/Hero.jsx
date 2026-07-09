@@ -91,7 +91,7 @@ export default function Hero({ reducedMotion }) {
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.85, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="relative h-[32rem] sm:h-[38rem] lg:h-[45rem] rounded-[2rem] overflow-hidden border border-white/10 bg-surface shadow-[0_40px_120px_rgba(0,0,0,0.45)]"
+          className="relative h-[30rem] sm:h-[34rem] lg:h-[40rem] rounded-[2rem] overflow-hidden border border-white/10 bg-surface shadow-[0_40px_120px_rgba(0,0,0,0.45)]"
         >
           <OrbitScene />
         </motion.div>

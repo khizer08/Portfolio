@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 export default function OrbitScene() {
   return (
     <div className="relative mx-auto w-full h-full overflow-visible">
-      <div className="h-full w-full grid justify-items-center items-start">
-        <div className="w-full max-w-[34rem] h-[32rem] sm:h-[34rem] lg:h-[36rem] px-0 py-0">
+      <div className="h-full w-full grid justify-items-center items-center">
+        <div className="w-full max-w-[34rem] h-[30rem] sm:h-[32rem] lg:h-[34rem] px-0 py-0">
           <div className="orbit-scene w-full h-full">
             <div className="orbit-center glass">
               <p className="text-faint text-sm uppercase tracking-[0.4em] mb-2">launch</p>
@@ -17,7 +17,7 @@ export default function OrbitScene() {
               className="orbit-wrapper orbit-wrapper-1"
             >
               <div className="orbit-ring orbit-ring-1" />
-              <div className="orbit-satellite bg-primary/20 border-primary/35 text-primary">Design</div>
+              <div className="orbit-satellite bg-secondary/20 border-secondary/35 text-secondary">Design</div>
             </motion.div>
 
             <motion.div
@@ -26,7 +26,7 @@ export default function OrbitScene() {
               className="orbit-wrapper orbit-wrapper-2"
             >
               <div className="orbit-ring orbit-ring-2" />
-              <div className="orbit-satellite bg-secondary/20 border-secondary/35 text-secondary">Build</div>
+              <div className="orbit-satellite bg-primary/20 border-primary/35 text-primary">Build</div>
             </motion.div>
 
             <motion.div
