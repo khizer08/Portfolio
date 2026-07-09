@@ -44,7 +44,7 @@ export default function Orbit() {
           </div>
 
           <Reveal>
-            <div className="relative mx-auto w-full max-w-xl aspect-square">
+            <div className="relative mx-auto w-full max-w-[28rem] md:max-w-xl aspect-square overflow-hidden">
               <div className="orbit-scene">
                 <div className="orbit-center glass">
                   <p className="text-faint text-sm uppercase tracking-[0.4em] mb-2">launch</p>

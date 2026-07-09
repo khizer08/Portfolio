@@ -51,7 +51,7 @@ export default function Contact() {
                 href={href}
                 target={href.startsWith("http") ? "_blank" : undefined}
                 rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="group flex items-center gap-3 font-mono text-sm sm:text-base px-5 py-3 rounded-full border border-transparent bg-surface/95 text-text shadow-[0_18px_40px_rgba(0,0,0,0.18)] hover:border-primary/60 hover:text-primary transition-all duration-200"
+                className="group flex items-center gap-3 font-mono text-sm sm:text-base px-5 py-3 rounded-full border border-white/10 bg-surface/90 text-text shadow-[0_22px_50px_rgba(0,0,0,0.24)] backdrop-blur-sm hover:bg-surface hover:text-white transition-all duration-200"
               >
                 <Icon size={15} />
                 {label}

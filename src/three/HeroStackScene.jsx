@@ -23,7 +23,7 @@ function StaticStackFallback() {
     { w: "w-40", color: "from-secondary/35 to-secondary/5", y: "translate-y-4" },
   ];
   return (
-    <div className="flex flex-col items-center justify-center gap-4 h-full">
+    <div className="flex flex-col items-center justify-center gap-4 min-h-full">
       {layers.map((l, i) => (
         <div
           key={i}
@@ -36,17 +36,19 @@ function StaticStackFallback() {
 }
 
 export default function HeroStackScene({ reducedMotion, className }) {
+  const fallbackClass = `${className} bg-surface/95 min-h-full min-w-full overflow-hidden`;
+
   if (reducedMotion) {
     return (
-      <div className={`${className} bg-surface/95`}>
+      <div className={fallbackClass}>
         <StaticStackFallback />
       </div>
     );
   }
 
   return (
-    <CanvasErrorBoundary fallback={<div className={`${className} bg-surface/95`}><StaticStackFallback /></div>}>
-      <Suspense fallback={<div className={`${className} bg-surface/95`}><StaticStackFallback /></div>}>
+    <CanvasErrorBoundary fallback={<div className={fallbackClass}><StaticStackFallback /></div>}>
+      <Suspense fallback={<div className={fallbackClass}><StaticStackFallback /></div>}>
         <HeroStack className={className} />
       </Suspense>
     </CanvasErrorBoundary>

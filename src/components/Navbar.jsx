@@ -40,19 +40,21 @@ export default function Navbar() {
             <span className="text-primary">.</span>
           </a>
 
-          <ul className="hidden md:flex items-center gap-3 font-mono text-sm">
+          <ul className="hidden md:flex items-center gap-4 font-mono text-base">
             {navLinks.map((link) => (
               <li key={link.id}>
                 <button
                   onClick={() => handleNav(link.id)}
-                  className={`relative px-4 py-2 rounded-full transition-colors duration-200 ${
-                    activeId === link.id ? "text-text" : "text-muted hover:text-text"
+                  className={`relative px-5 py-3 rounded-full transition-all duration-200 font-semibold ${
+                    activeId === link.id
+                      ? "text-text"
+                      : "text-muted hover:text-text hover:bg-white/5"
                   }`}
                 >
                   {activeId === link.id && (
                     <motion.span
                       layoutId="nav-pill"
-                      className="absolute inset-0 rounded-full bg-surface-2 border border-border"
+                      className="absolute inset-0 rounded-full bg-white/5 border border-primary/20"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -68,7 +70,7 @@ export default function Navbar() {
               e.preventDefault();
               handleNav("contact");
             }}
-            className="hidden md:inline-flex items-center text-sm font-mono px-5 py-2.5 rounded-full border border-border hover:border-primary hover:text-primary transition-colors duration-200"
+            className="hidden md:inline-flex items-center text-base font-semibold font-mono px-6 py-3 rounded-full bg-primary text-white border border-primary/20 hover:bg-primary-soft hover:text-white transition-colors duration-200"
           >
             let's talk
           </a>
@@ -79,29 +81,45 @@ export default function Navbar() {
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
           >
-            {open ? <X size={20} /> : <Menu size={20} />}
+            {open ? <X size={24} /> : <Menu size={24} />}
           </button>
         </nav>
 
         {open && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            className="md:hidden glass mt-2 rounded-2xl p-4 flex flex-col gap-1 font-mono text-sm"
-          >
-            {navLinks.map((link) => (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-40 bg-slate-950/35 backdrop-blur-sm md:hidden"
+              onClick={() => setOpen(false)}
+            />
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="fixed inset-x-4 top-[5.5rem] z-50 glass rounded-[2rem] p-4 flex flex-col gap-2 font-mono text-base shadow-[0_40px_120px_rgba(0,0,0,0.3)] md:hidden"
+            >
+              {navLinks.map((link) => (
+                <button
+                  key={link.id}
+                  onClick={() => handleNav(link.id)}
+                  className={`text-left px-4 py-3 rounded-2xl transition-all duration-200 font-semibold ${
+                    activeId === link.id
+                      ? "text-text bg-white/10"
+                      : "text-muted hover:text-text hover:bg-white/5"
+                  }`}
+                >
+                  ~/{link.label}
+                </button>
+              ))}
               <button
-                key={link.id}
-                onClick={() => handleNav(link.id)}
-                className={`text-left px-3 py-2.5 rounded-lg transition-colors ${
-                  activeId === link.id ? "text-text bg-surface-2" : "text-muted hover:text-text"
-                }`}
+                onClick={() => handleNav("contact")}
+                className="mt-2 w-full rounded-2xl bg-primary px-4 py-3 text-base font-semibold text-white transition hover:bg-primary-soft"
               >
-                ~/{link.label}
+                let's talk
               </button>
-            ))}
-          </motion.div>
+            </motion.div>
+          </>
         )}
       </div>
     </header>

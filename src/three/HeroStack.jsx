@@ -83,9 +83,12 @@ export default function HeroStack({ className = "" }) {
   return (
     <div className={className} aria-hidden="true">
       <Canvas
+        className="w-full h-full"
+        style={{ width: "100%", height: "100%" }}
         camera={{ position: [4, 2.1, 5], fov: 40 }}
         dpr={[1, 1.75]}
         gl={{ antialias: true, alpha: true }}
+        onCreated={(state) => state.gl.setClearColor(new THREE.Color("#08090d"))}
       >
         <ambientLight intensity={0.65} />
         <pointLight position={[4, 4, 6]} intensity={1.2} color="#8c82ff" />
